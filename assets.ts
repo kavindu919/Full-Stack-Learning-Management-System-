@@ -59,3 +59,70 @@ export const courseList = [
     courseCode: "BT107",
   },
 ];
+
+export const columns = [
+  "Assignment Name",
+  "Course Code",
+  "Posted Date",
+  "Due Date",
+  "Status",
+];
+
+export const data = [
+  {
+    "Assignment Name": "React Hooks and State Management",
+    "Course Code": "CS201",
+    "Posted Date": "2024-09-10",
+    "Due Date": "2024-09-20",
+    Status: "Pending",
+  },
+  {
+    "Assignment Name": "MongoDB Schema Design",
+    "Course Code": "CS202",
+    "Posted Date": "2024-09-15",
+    "Due Date": "2024-09-25",
+    Status: "Completed",
+  },
+  {
+    "Assignment Name": "Building RESTful APIs with Node.js",
+    "Course Code": "CS203",
+    "Posted Date": "2024-09-12",
+    "Due Date": "2024-09-22",
+    Status: "In Progress",
+  },
+  {
+    "Assignment Name": "Introduction to GraphQL",
+    "Course Code": "CS204",
+    "Posted Date": "2024-09-17",
+    "Due Date": "2024-09-27",
+    Status: "Pending",
+  },
+  {
+    "Assignment Name": "Responsive Web Design with Tailwind CSS",
+    "Course Code": "CS205",
+    "Posted Date": "2024-09-05",
+    "Due Date": "2024-09-15",
+    Status: "Completed",
+  },
+  {
+    "Assignment Name": "Docker and Containerization Basics",
+    "Course Code": "CS206",
+    "Posted Date": "2024-09-19",
+    "Due Date": "2024-09-29",
+    Status: "Pending",
+  },
+  {
+    "Assignment Name": "JWT Authentication with Express",
+    "Course Code": "CS207",
+    "Posted Date": "2024-09-14",
+    "Due Date": "2024-09-24",
+    Status: "In Progress",
+  },
+  {
+    "Assignment Name": "TypeScript Basics",
+    "Course Code": "CS208",
+    "Posted Date": "2024-09-18",
+    "Due Date": "2024-09-28",
+    Status: "Completed",
+  },
+];

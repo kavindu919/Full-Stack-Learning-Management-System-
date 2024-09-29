@@ -1,55 +1,47 @@
 "use client";
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../lib/hooks";
 import { useRouter } from "next/navigation";
 import { courseList, studentLinks } from "../../assets";
 import Image from "next/image";
 import { SearchBar } from "./SearchBar";
 import { CourseCard } from "./CourseCard";
+import { DayPicker } from "react-day-picker";
+import "react-day-picker/style.css";
+import { Table } from "./Table";
+import { columns, data } from "../../assets";
+import { BellOutlined, UserOutlined } from "@ant-design/icons";
 
 const UserDashboard = () => {
   const dispatch = useAppDispatch();
   const { role } = useAppSelector((state) => state.dashboard);
   const router = useRouter();
-  //chek the role is correct
+
+  // Check if the role is correct
   useEffect(() => {
     if (role !== "student") router.push("/");
   }, [role, router]);
 
+  const [selected, setSelected] = useState<Date>();
+
   return (
-    <div className="grid h-screen grid-rows-[60px_1fr] md:grid-cols-[256px_1fr]">
+    <div className="min-h-screen grid grid-rows-[60px_1fr] md:grid-cols-[256px_1fr]">
       {/* Header */}
-      <div className="col-span-full row-span-1 bg-white flex items-center">
-        <div className=" pl-0">
-          <Image
-            src="/Logo.jpg"
-            alt="Logo"
-            width={256}
-            height={64}
-            className=""
-          />
-        </div>
-        <div className=" ml-auto">
-          <SearchBar text="" />
-        </div>
-        <div className=" flex justify-center gap-[24px] pl-[550px]">
-          <Image
-            src="/bell.png"
-            alt="Logo"
-            width={34}
-            height={34}
-            className=""
-          />
-          <Image
-            src="/profile.png"
-            alt="Logo"
-            width={34}
-            height={34}
-            className=""
-          />
+      <div className="col-span-full row-span-1 bg-white flex flex-col md:flex-row items-center ">
+        <div className="grid  grid-cols-[256px_1fr_1fr]">
+          <div className=" w-[141px] h-[32px] md:w-[256px] md:h-[60px]">
+            <Image src="/Logo.jpg" alt="Logo" width={256} height={60} />
+          </div>
+          <div className="flex items-center justify-center pl-6">
+            <SearchBar text="" />
+          </div>
+          <div className="flex items-center justify-end gap-3  pr-2">
+            <BellOutlined />
+            <UserOutlined />
+          </div>
         </div>
       </div>
+
       {/* Sidebar (full height on medium screens and larger) */}
       <div className="hidden bg-[#FAF7F2] md:block md:h-full">
         <div className="flex flex-col p-8 h-full gap-[28px]">
@@ -57,7 +49,7 @@ const UserDashboard = () => {
             {studentLinks.map((item, index) => (
               <li key={index}>
                 <a
-                  className="flex items-center gap-[15px] p-4 rounded  hover:bg-[#707FDD]"
+                  className="flex items-center gap-[15px] p-4 rounded hover:bg-[#707FDD]"
                   href={item.url}
                 >
                   <Image
@@ -73,14 +65,58 @@ const UserDashboard = () => {
           </ul>
         </div>
       </div>
+
       {/* Main Content */}
-      <div className="bg-white">
-        <div className="bg-[#FFFEFC]">
-          <div className="ml-[24px] mt-[24px] grid h-screen grid-rows-1 border-2 border-black md:grid-rows-[517px_1fr]">
-            <div className="grid grid-rows-1 bg-red-400 md:grid-cols-[2fr_1fr]">
-              <div className="border-2 border-black">
-                {courseList.map((item, index) => (
-                  <ul>
+      <div>
+        <div className="bg-[#FFFEFC] p-4">
+          <div className="grid grid-rows-1 md:grid-rows-[517px_1fr]">
+            <div className="grid grid-rows-1 bg-red-400 md:grid-cols-[1fr_2fr]">
+              <div className="bg-blue-400 p-4 md:flex md:flex-col gap-[15px] md:gap-[24px] md:items-center">
+                <h3 className="text-[12px] md:text-[18px]">Quick Access</h3>
+                <div className="flex flex-col sm:flex-row gap-[12px] md:gap-[24px] md:justify-center w-full">
+                  <button
+                    aria-label="Enroll Course"
+                    className="flex cursor-pointer flex-row items-center gap-3 bg-[#FAF7F2] p-[0.5rem] shadow-md transition-all duration-300 hover:scale-110 hover:bg-[#FFDC7F] rounded"
+                  >
+                    <img
+                      src="https://picsum.photos/200"
+                      alt="enroll image"
+                      className="min-h-[37px] w-[42px] rounded"
+                    />
+                    <span className="text-[12px] md:text-[14px]">
+                      Enroll Course
+                    </span>
+                  </button>
+                  <button
+                    aria-label="Announcement"
+                    className="flex cursor-pointer flex-row items-center gap-3 bg-[#FAF7F2] p-[0.5rem] shadow-md transition-all duration-300 hover:scale-110 hover:bg-[#FFDC7F] rounded"
+                  >
+                    <img
+                      src="https://picsum.photos/200"
+                      alt="announcement image"
+                      className="min-h-[37px] w-[42px] rounded"
+                    />
+                    <span className="text-[12px] md:text-[14px]">
+                      Announcement
+                    </span>
+                  </button>
+                </div>
+                {/* Calendar */}
+                <div className="mt-2 md:flex items-center justify-center hidden">
+                  <div className="bg-[#FAF7F2] p-4 rounded w-auto">
+                    <DayPicker
+                      mode="single"
+                      selected={selected}
+                      onSelect={setSelected}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Course List */}
+              <div className="md:max-h-[517px] overflow-y-auto">
+                <ul className="flex flex-col gap-[10px] p-4">
+                  {courseList.map((item, index) => (
                     <li key={index}>
                       <CourseCard
                         courseImage={item.courseImage}
@@ -88,13 +124,14 @@ const UserDashboard = () => {
                         courseCode={item.courseCode}
                       />
                     </li>
-                  </ul>
-                ))}
+                  ))}
+                </ul>
               </div>
-              <div>hh</div>
             </div>
-            <div className="bg-lime-400">kk</div>
-            <div></div>
+            <div className="flex flex-col gap-2 bg-lime-400 p-4">
+              <span className="text-[18px] pl-1">Assignment Submitting </span>
+              <Table columns={columns} data={data} />
+            </div>
           </div>
         </div>
       </div>
