@@ -62,7 +62,7 @@ const SingleCoursePage = () => {
 
       <div className="grid grid-rows-1 md:grid-rows-[auto_1fr] p-4 h-full">
         <div className="flex flex-col gap-4 bg-orange-500">
-          <span className=" text-[10px] md:text-sm text-black opacity-50">
+          <span className=" text-[10px] md:text-sm  opacity-50">
             Dashboard / Student / Course / Introduction_to_Phyton_Programming
           </span>
           <span className=" text-[18px] font-medium">

@@ -74,7 +74,7 @@ const CoursePage = () => {
       <div className=" min-h-full">
         <div className="grid grid-rows-1 md:grid-rows-[0.25fr_1fr] p-4 h-full">
           <div className="flex flex-col gap-4">
-            <span className=" text-sm text-black] opacity-50">
+            <span className="text-[10px] md:text-sm opacity-50">
               Dashboard / Student / Course
             </span>
             <span className=" text-[18px] font-medium">Course Overview</span>

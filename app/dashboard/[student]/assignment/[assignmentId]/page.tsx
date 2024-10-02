@@ -66,7 +66,7 @@ const UserDashboard = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-rows-[0.3fr_1fr_1fr]">
+      <div className="grid grid-rows-[0.3fr_1fr_1fr] bg-[#FFFEFC]">
         {/* top section */}
         <div className=" p-4 flex flex-col gap-8">
           <span className="text-[10px] md:text-xs opacity-50">
