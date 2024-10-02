@@ -1,4 +1,5 @@
 import React from "react";
+import { MenuOutlined } from "@ant-design/icons";
 
 export const studentLinks = [
   { name: "Dashboard", image: "/menu.png", url: "/student/dashboard" },
@@ -124,5 +125,94 @@ export const data = [
     "Posted Date": "2024-09-18",
     "Due Date": "2024-09-28",
     Status: "Completed",
+  },
+];
+
+//data for the course card
+export const cardData = [
+  {
+    courseCode: "PMAT 11513",
+    courseName: "Abstract Algebra",
+    image: "https://picsum.photos/300/150?random=1",
+    onClick: () => {
+      console.log("Abstract Algebra clicked");
+    },
+  },
+  {
+    courseCode: "CSCI 11013",
+    courseName: "Introduction to Programming",
+    image: "https://picsum.photos/300/150?random=2",
+    onClick: () => {
+      console.log("Introduction to Programming clicked");
+    },
+  },
+  {
+    courseCode: "PHYS 10123",
+    courseName: "General Physics",
+    image: "https://picsum.photos/300/150?random=3",
+    onClick: () => {
+      console.log("General Physics clicked");
+    },
+  },
+  {
+    courseCode: "CHEM 11213",
+    courseName: "Organic Chemistry",
+    image: "https://picsum.photos/300/150?random=4",
+    onClick: () => {
+      console.log("Organic Chemistry clicked");
+    },
+  },
+  {
+    courseCode: "MATH 12013",
+    courseName: "Calculus I",
+    image: "https://picsum.photos/300/150?random=5",
+    onClick: () => {
+      console.log("Calculus I clicked");
+    },
+  },
+];
+
+export const lectureData = [
+  {
+    lectureNo: "Lecture 01",
+    uploadDateTime: "2024/09/03 15:46",
+    pdfName: "Lecture_01.pdf",
+  },
+  {
+    lectureNo: "Lecture 02",
+    uploadDateTime: "2024/09/10 14:30",
+    pdfName: "Lecture_02.pdf",
+  },
+  {
+    lectureNo: "Lecture 03",
+    uploadDateTime: "2024/09/17 13:20",
+    pdfName: "Lecture_03.pdf",
+  },
+];
+
+export const assignmentData = [
+  {
+    assignmentNo: "Assignment 01",
+    uploadDateTime: "2024/09/01 10:30",
+    dueDateTime: "2024/09/15 23:59",
+    pdfName: "Assignment_01.pdf",
+  },
+  {
+    assignmentNo: "Assignment 02",
+    uploadDateTime: "2024/09/05 14:00",
+    dueDateTime: "2024/09/20 23:59",
+    pdfName: "Assignment_02.pdf",
+  },
+  {
+    assignmentNo: "Assignment 03",
+    uploadDateTime: "2024/09/10 09:00",
+    dueDateTime: "2024/09/25 23:59",
+    pdfName: "Assignment_03.pdf",
+  },
+  {
+    assignmentNo: "Assignment 04",
+    uploadDateTime: "2024/09/15 12:15",
+    dueDateTime: "2024/09/30 23:59",
+    pdfName: "Assignment_04.pdf",
   },
 ];

@@ -1,11 +1,7 @@
-import UserDashboard from "./components/Dashboard";
-import StudentDashboard from "./components/StudentDashboard";
-
 export default function Home() {
   return (
     <div>
-      {/* {<UserDashboard />} */}
-      {<StudentDashboard />}
+      <h1>Hello World</h1>
     </div>
   );
 }

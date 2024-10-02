@@ -7,7 +7,7 @@ interface ButtonProps {
   onClick: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   text,
   isLoading = false,
   disabled = false,

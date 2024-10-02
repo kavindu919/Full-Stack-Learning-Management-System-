@@ -4,28 +4,44 @@ interface CardProps {
   courseCode: string;
   courseName: string;
   image: string;
-  isLoading: boolean;
   onClick: () => void;
 }
 
-const Card: React.FC<CardProps> = ({
+export const Card: React.FC<CardProps> = ({
   courseCode,
   courseName,
   image,
-  isLoading = false,
   onClick,
 }) => {
   return (
-    <div className="h-[250px] w-[250px] cursor-pointer overflow-hidden rounded-lg border-2 border-gray-100 shadow-lg transition-transform hover:scale-105">
-      <div className="h-[90px] bg-[#FAF7F2] p-3">
-        <div className="flex flex-col space-y-[1px]">
-          <h5 className="text-[18px] font-semibold ">{courseCode}</h5>
-          <span className="text-[14px] text-gray-600">{courseName}</span>
+    <div
+      className="max-w-72  h-[150px] md:h-[200px] overflow-hidden rounded-lg bg-[#FAF7F2] shadow-md transition-transform hover:scale-105 "
+      onClick={onClick}
+    >
+      <a href="">
+        <div className="grid grid-rows-[0.5fr_1fr]">
+          <div className="flex h-auto flex-col p-5">
+            <h3 className=" text-[12px] md:text-[16px] font-medium truncate">
+              {courseName}
+            </h3>
+            <p className=" text-[10px] md:text-[12px] text-gray-600">
+              {courseCode}
+            </p>
+          </div>
+          {/* <img
+            className="w-full object-cover"
+            src="https://picsum.photos/300/150"
+            alt="Abstract Algebra Course Image"
+          /> */}
+          <div className="relative w-full pt-[56.25%] overflow-hidden">
+            <img
+              className="absolute inset-0 w-full h-full object-cover"
+              src={image}
+              alt={`${courseName} Course Image`}
+            />
+          </div>
         </div>
-      </div>
-      <div className="flex h-[190px] items-center justify-center bg-[#FAF7F2]">
-        <Image className="h-full w-full object-cover" src={image} alt="image" />
-      </div>
+      </a>
     </div>
   );
 };

@@ -11,7 +11,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
   courseCode,
 }) => {
   return (
-    <div className="flex items-center bg-[#FAF7F2] p-2 min-h-[40px] sm:min-h-[60px] w-full max-w-full rounded-[10px]">
+    <div className="flex items-center bg-[#FAF7F2] p-2 min-h-[40px] sm:min-h-[60px] w-full max-w-full rounded-[10px] shadow-md">
       {/* Image */}
       <div className="flex-shrink-0">
         <img
