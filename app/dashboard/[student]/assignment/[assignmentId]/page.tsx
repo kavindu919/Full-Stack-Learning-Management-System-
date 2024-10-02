@@ -1,27 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../../lib/hooks";
-import { useRouter } from "next/navigation";
+
 import { studentLinks } from "../../../../../assets";
 import Image from "next/image";
 import { SearchBar } from "../../../../components/SearchBar";
-import { Table } from "../../../../components/Table";
-import { columns, data } from "../../../../../assets";
 import { BellOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 import Button from "@/app/components/Button";
 
-const UserDashboard = () => {
-  const dispatch = useAppDispatch();
-  const { role } = useAppSelector((state) => state.dashboard);
-  const router = useRouter();
-
-  // Check if the role is correct
-  useEffect(() => {
-    if (role !== "student") router.push("/");
-  }, [role, router]);
-
-  const [selected, setSelected] = useState<Date>();
-
+const UserAssignment = () => {
   return (
     <div className="min-h-screen grid grid-rows-[60px_1fr] md:grid-cols-[256px_1fr]">
       {/* Header */}
@@ -188,4 +173,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default UserAssignment;

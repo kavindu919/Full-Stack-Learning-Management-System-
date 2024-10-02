@@ -1,25 +1,11 @@
 "use client";
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../lib/hooks";
-import { useRouter } from "next/navigation";
 import { studentLinks } from "../../../../assets";
 import Image from "next/image";
 import { SearchBar } from "../../../components/SearchBar";
 
 import { BellOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
 
-const UserDashboard = () => {
-  const dispatch = useAppDispatch();
-  const { role } = useAppSelector((state) => state.dashboard);
-  const router = useRouter();
-
-  // Check if the role is correct
-  useEffect(() => {
-    if (role !== "student") router.push("/");
-  }, [role, router]);
-
-  const [selected, setSelected] = useState<Date>();
-
+const UserAnnouncement = () => {
   return (
     <div className="min-h-screen grid grid-rows-[60px_1fr] md:grid-cols-[256px_1fr]">
       {/* Header */}
@@ -122,4 +108,4 @@ const UserDashboard = () => {
   );
 };
 
-export default UserDashboard;
+export default UserAnnouncement;

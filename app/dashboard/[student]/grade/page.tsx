@@ -1,14 +1,11 @@
 "use client";
-import { studentLinks } from "../../../../assets";
+import { courseList, studentLinks } from "../../../../assets";
 import Image from "next/image";
 import { SearchBar } from "../../../components/SearchBar";
 import "react-day-picker/style.css";
 import { BellOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
-import Button from "@/app/components/Button";
-import { cardData } from "../../../../assets";
-import { Card } from "@/app/components/Card";
 
-const CoursePage = () => {
+const UserGrade = () => {
   return (
     <div className="min-h-screen grid grid-rows-[60px_1fr] md:grid-cols-[256px_1fr]">
       {/* Header */}
@@ -53,36 +50,10 @@ const CoursePage = () => {
       </div>
 
       {/* Main Content */}
-      <div className=" min-h-full">
-        <div className="grid grid-rows-1 md:grid-rows-[0.25fr_1fr] p-4 h-full">
-          <div className="flex flex-col gap-4">
-            <span className="text-[10px] md:text-sm opacity-50">
-              Dashboard / Student / Course
-            </span>
-            <span className=" text-[18px] font-medium">Course Overview</span>
-            <div className=" min-w-7">
-              <Button
-                text="Enroll New Course"
-                isLoading={false}
-                disabled={false}
-                onClick={() => console.log("Work")}
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 p-3 gap-4 justify-center items-center">
-            {cardData.map((item, index) => (
-              <Card
-                courseName={item.courseName}
-                courseCode={item.courseCode}
-                image={item.image}
-                onClick={item.onClick}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+
+      <div className="bg-[#FFFEFC] p-4"></div>
     </div>
   );
 };
 
-export default CoursePage;
+export default UserGrade;

@@ -8,9 +8,6 @@ import {
 import Image from "next/image";
 import { SearchBar } from "../../../../components/SearchBar";
 import { BellOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
-import Button from "@/app/components/Button";
-import { cardData } from "../../../../../assets";
-import { Card } from "@/app/components/Card";
 
 const SingleCoursePage = () => {
   const [type, setType] = useState("lectures");
