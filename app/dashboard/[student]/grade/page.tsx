@@ -1,9 +1,15 @@
 "use client";
-import { courseList, studentLinks } from "../../../../assets";
+import {
+  gradebookAssignmentsColumns,
+  gradebookAssignmentsData,
+  studentLinks,
+} from "../../../../assets";
 import Image from "next/image";
 import { SearchBar } from "../../../components/SearchBar";
 import "react-day-picker/style.css";
 import { BellOutlined, UserOutlined, MenuOutlined } from "@ant-design/icons";
+import { Table } from "@/app/components/Table";
+import BarChart from "@/app/components/BarChart";
 
 const UserGrade = () => {
   return (
@@ -51,7 +57,88 @@ const UserGrade = () => {
 
       {/* Main Content */}
 
-      <div className="bg-[#FFFEFC] p-4"></div>
+      {/* <div className="grid grid-rows-[auto_1fr] bg-[#FFFEFC] p-4">
+        <div className="flex flex-col gap-4">
+          <span className="text-[10px] md:text-sm opacity-50">
+            Dashboard / Student / Grade_Book
+          </span>
+          <h3 className=" text-sm md:text-lg font-medium">
+            Assignment Gradebook
+          </h3>
+          <div className="flex items-start">
+            <select
+              name="course"
+              id="course"
+              className="pl-3 pr-8 py-2 border border-black"
+            >
+              <option value="Select Course">Select Course</option>
+              <option value="">Course 1</option>
+              <option value="">Course 2</option>
+              <option value="">Course 3</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 mt-3 w-full">
+          <Table
+            columns={gradebookAssignmentsColumns}
+            data={gradebookAssignmentsData}
+          />
+
+          <div className="flex flex-col gap-2 p-4 w-full">
+            <h3 className=" text-sm md:text-lg font-medium">
+              Overall Grade Distribution
+            </h3>
+            <span className="text-[10px] md:text-sm opacity-50">
+              Grades form 08 / 16 to 09/18
+            </span>
+            <BarChart />
+          </div>
+        </div>
+      </div>
+    </div> */}
+      <div className="grid grid-rows-[auto_1fr] bg-[#FFFEFC] p-4">
+        <div className="flex flex-col gap-4">
+          <span className="text-[10px] md:text-sm opacity-50">
+            Dashboard / Student / Grade_Book
+          </span>
+          <h3 className="text-sm md:text-lg font-medium">
+            Assignment Gradebook
+          </h3>
+          <div className="flex items-start">
+            <select
+              name="course"
+              id="course"
+              className="pl-3 pr-8 py-2 border border-black"
+            >
+              <option value="Select Course">Select Course</option>
+              <option value="">Course 1</option>
+              <option value="">Course 2</option>
+              <option value="">Course 3</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex flex-col gap-3 mt-3 min-w-[320px]">
+          {/* Responsive Table Container */}
+          <div className="overflow-x-auto w-full">
+            <Table
+              columns={gradebookAssignmentsColumns}
+              data={gradebookAssignmentsData}
+            />
+          </div>
+          {/* Responsive Bar Chart Container */}
+          <div className="flex flex-col gap-2 p-4 w-full">
+            <h3 className="text-sm md:text-lg font-medium">
+              Overall Grade Distribution
+            </h3>
+            <span className="text-[10px] md:text-sm opacity-50">
+              Grades from 08 / 16 to 09/18
+            </span>
+            <div className=" overflow-x-auto w-full">
+              <BarChart />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -216,3 +216,69 @@ export const assignmentData = [
     pdfName: "Assignment_04.pdf",
   },
 ];
+
+export const gradebookAssignmentsColumns = [
+  "Assignment Name",
+  "Course Code",
+  "Posted Date",
+  "Marks",
+  "Status",
+];
+export const gradebookAssignmentsData = [
+  {
+    "Assignment Name": "Introduction to Chemistry",
+    "Course Code": "CHE101",
+    "Posted Date": "2024-09-01",
+    Marks: 85,
+    Status: "Submitted",
+  },
+  {
+    "Assignment Name": "Math Assignment 1",
+    "Course Code": "MAT202",
+    "Posted Date": "2024-09-05",
+    Marks: 90,
+    Status: "Graded",
+  },
+  {
+    "Assignment Name": "Literature Review",
+    "Course Code": "ENG303",
+    "Posted Date": "2024-09-10",
+    Marks: 78,
+    Status: "Submitted",
+  },
+  {
+    "Assignment Name": "Programming Project",
+    "Course Code": "CSC404",
+    "Posted Date": "2024-09-15",
+    Marks: 95,
+    Status: "Graded",
+  },
+  {
+    "Assignment Name": "Group Presentation",
+    "Course Code": "COM505",
+    "Posted Date": "2024-09-20",
+    Marks: 88,
+    Status: "Pending",
+  },
+  {
+    "Assignment Name": "Data Analysis Report",
+    "Course Code": "STA606",
+    "Posted Date": "2024-09-25",
+    Marks: 92,
+    Status: "Submitted",
+  },
+  {
+    "Assignment Name": "Research Paper",
+    "Course Code": "RES707",
+    "Posted Date": "2024-09-28",
+    Marks: 81,
+    Status: "Graded",
+  },
+  {
+    "Assignment Name": "Final Exam Preparation",
+    "Course Code": "EXM808",
+    "Posted Date": "2024-09-30",
+    Marks: 0, // Or you can omit this line if you prefer
+    Status: "Not Submitted",
+  },
+];
